@@ -15,7 +15,7 @@ Turma: 2ºC Desenvolvimento de Sistemas
 
 -Dev Front-End / UX - Bruna Valera Marques
 
--QA + Documentação - Heloisa Harue Ussami
+-QA + Documentação - Heloisa Harue Ussami Goncalves
 
 # O Problema que Vamos Resolver
 -Qual é a dor? (Uma frase: quem sofre e com o quê.) 
