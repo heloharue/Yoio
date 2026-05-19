@@ -7,22 +7,19 @@ Nome do Time: Yoio
 Turma: 2ºC Desenvolvimento de Sistemas
 
 # Papéis do Time:
+
 -Product Manager - Lucas Cantelli Medeiros
-
--Scrum Master - Lucas Konjuski/Eduarda Nakano Torres
-
--Dev Back-End - Eduarda Nakano Torres/Lucas Cantelli Medeiros
-
+-Scrum Master - Lucas Konjuski/Eduarda Ayumi Nakano Torres
+-Dev Back-End - Eduarda Ayumi Nakano Torres/Lucas Cantelli Medeiros
 -Dev Front-End / UX - Bruna Valera Marques
-
 -QA + Documentação - Heloisa Harue Ussami Goncalves
 
 # O Problema que Vamos Resolver
 -Qual é a dor? (Uma frase: quem sofre e com o quê.) 
- Crianças atípicas com dificuldades de aprendizado
+ Crianças atípicas com dificuldades de aprendizado.
  
- -Quem é o usuário final?  (Seja específico: não “pessoas”, mas “dona de lanchonete” ou “aluno do ensino médio”.),
-  Crianças no processo de aprendizagem e com dificuldades
+-Quem é o usuário final?  (Seja específico: não “pessoas”, mas “dona de lanchonete” ou “aluno do ensino médio”.),
+ Crianças no processo de aprendizagem e com dificuldades.
   
 -Complete a frase: 
  “Nosso software ajuda CRIANÇAS ATÍPICAS a resolver ATIVIDADES COGNITIVAS , eliminando O DESGASTE PSICOLÓGICO ATRELADO AO ESTUDO.”
