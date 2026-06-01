@@ -31,4 +31,4 @@ Turma: 2ºC Desenvolvimento de Sistemas.
 -Meta do Sprint 1: (A primeira funcionalidade que vocês entregarão nas próximas 2 semanas.)                                                                                                                  Primeira versão da  Primeira interface do aplicativo
 
 #  Link do Trello
-
+https://trello.com/invite/b/69d4e7f5108db27bdbfb7044/ATTIcd2b3344b5919b719acf72961724fd58CB946E33/meu-quadro-do-trello
