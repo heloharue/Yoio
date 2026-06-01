@@ -4,7 +4,7 @@ Uso de mini-games educativos que estimulam o desenvolvimento cognitivo das mesma
 
 # Indentificação do grupo
 Nome do Time: Yoio
-Turma: 2ºC Desenvolvimento de Sistemas
+Turma: 2ºC Desenvolvimento de Sistemas.
 
 # Papéis do Time:
 
