@@ -32,3 +32,6 @@ Turma: 2ºC Desenvolvimento de Sistemas.
 
 #  Link do Trello
 https://trello.com/invite/b/69d4e7f5108db27bdbfb7044/ATTIcd2b3344b5919b719acf72961724fd58CB946E33/meu-quadro-do-trello
+
+#  Link do figma
+https://www.figma.com/design/QMKLsjGdrOgbToYKZy0H0i/login?node-id=0-1&p=f&t=a0mibV4zGQVvRog5-0
