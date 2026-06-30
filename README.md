@@ -36,7 +36,7 @@ https://trello.com/invite/b/69d4e7f5108db27bdbfb7044/ATTIcd2b3344b5919b719acf729
 #  Link do figma
 https://www.figma.com/design/QMKLsjGdrOgbToYKZy0H0i/login?node-id=0-1&p=f&t=a0mibV4zGQVvRog5-0
 
-## Backlog do Projeto
+# Backlog do Projeto
 | Prioridade | História de usuário | Critérios de aceite |
 |------------|---------------------|----------------------|
 | Essencial | Como criança, quero abrir o aplicativo e ver a tela inicial de forma clara para que o uso seja intuitivo. | 1. Tela de boas-vindas com o nome da criança. 2. Botão grande de "jogar". 3. Fontes amplas e contraste adequado. |
