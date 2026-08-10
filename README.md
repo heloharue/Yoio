@@ -51,3 +51,13 @@ https://www.figma.com/design/QMKLsjGdrOgbToYKZy0H0i/login?node-id=0-1&p=f&t=a0mi
 | Desejável | Como criança, quero ganhar medalhas por sequências de acertos para ter metas extras. | 1. Medalhas como "10 acertos seguidos". 2. Álbum de medalhas no menu. |
 | Futuro | Como responsável, quero ver um relatório do progresso para acompanhar o desenvolvimento do aprendizado da criança. | 1. Área restrita com senha. 2. Gráfico de desempenho por jogo. |
 | Futuro | Como criança, quero jogar em dupla com um amigo para aprender junto e desenvolver o companheirismo. | 1. Opção "Dois jogadores" no menu. 2. Cada um joga em seu dispositivo. 3. Pontuação combinada ou competitiva. |
+
+## Kanban e indicadores
+
+| Métrica | Resultado |
+|---|---:|
+| WIP atual | 2 cartões |
+| Limite de WIP | 3 cartões |
+| Cartões analisados | 12 |
+| Lead Time médio | 5,92 dias |
+| Cycle Time médio | 4 dias |
