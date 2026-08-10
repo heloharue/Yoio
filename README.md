@@ -61,3 +61,19 @@ https://www.figma.com/design/QMKLsjGdrOgbToYKZy0H0i/login?node-id=0-1&p=f&t=a0mi
 | Cartões analisados | 12 |
 | Lead Time médio | 5,92 dias |
 | Cycle Time médio | 4 dias |
+
+## Métricas de validação
+
+- **Formulário:** https://docs.google.com/forms/d/e/1FAIpQLSe5xqfjacheH6Wg59MuBUhoYVtZNgCiIFF7XjKnjffcDqSD2w/viewform?usp=publish-editor
+- **Total de respostas:** 6
+- **Taxa de interesse:** 83,3% demonstraram interesse na solução
+- **Talvez:** 16,7% demonstraram interesse parcial
+- **Principais feedbacks:**
+  - A proposta foi considerada uma boa alternativa para instituições educacionais e para o aprendizado.
+  - Foi apontada a necessidade de tornar o aplicativo mais atrativo para incentivar o público a baixá-lo.
+  - Foi sugerida a inclusão de diferentes níveis de dificuldade.
+  - Alguns participantes não identificaram defeitos no projeto.
+
+### Principais insights
+
+A validação apresentou uma resposta positiva à proposta do Yoio: **83,3% dos participantes afirmaram que teriam interesse em utilizar a solução**. Os principais pontos de melhoria identificados foram aumentar o poder de atração do aplicativo e oferecer diferentes níveis de dificuldade, permitindo adaptar a experiência às necessidades dos usuários.
