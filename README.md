@@ -52,6 +52,8 @@ https://www.figma.com/design/QMKLsjGdrOgbToYKZy0H0i/login?node-id=0-1&p=f&t=a0mi
 | Futuro | Como responsável, quero ver um relatório do progresso para acompanhar o desenvolvimento do aprendizado da criança. | 1. Área restrita com senha. 2. Gráfico de desempenho por jogo. |
 | Futuro | Como criança, quero jogar em dupla com um amigo para aprender junto e desenvolver o companheirismo. | 1. Opção "Dois jogadores" no menu. 2. Cada um joga em seu dispositivo. 3. Pontuação combinada ou competitiva. |
 
+<img width="1536" height="822" alt="image" src="https://github.com/user-attachments/assets/2950eddd-71a6-4a33-a70a-758cbb872951" />
+
 ## Kanban e indicadores
 
 | Métrica | Resultado |
