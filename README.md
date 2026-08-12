@@ -54,6 +54,18 @@ https://www.figma.com/design/QMKLsjGdrOgbToYKZy0H0i/login?node-id=0-1&p=f&t=a0mi
 
 <img width="1536" height="822" alt="image" src="https://github.com/user-attachments/assets/2950eddd-71a6-4a33-a70a-758cbb872951" />
 
+## 5. Roteiro do Pitch
+
+**Contexto → Conflito → Solução → Prova → Chamada**
+
+| Etapa | Descrição |
+|---|---|
+| **Contexto** | Durante o desenvolvimento do projeto, identificamos uma dificuldade presente no processo de aprendizagem de algumas crianças atípicas. A assimilação de conteúdos escolares pode ser difícil, principalmente quando as atividades são muito repetitivas ou pouco interativas. Pensando nisso, buscamos uma maneira de tornar esse processo mais estimulante e agradável. |
+| **Conflito** | O principal problema que queremos resolver é a dificuldade de assimilação de conteúdos e o desgaste psicológico relacionado ao estudo. Quando uma criança encontra dificuldades constantemente, repetir o mesmo tipo de atividade pode gerar frustração e fazer com que ela perca o interesse em continuar. Por isso, nosso objetivo é utilizar a interação e a lógica dos jogos para transformar parte desse processo em uma experiência mais dinâmica. |
+| **Solução** | Para isso, criamos o **Yoio**, um jogo de aprendizagem que utiliza mini-games educativos para estimular diferentes habilidades cognitivas. A criança poderá escolher entre diferentes atividades, receber feedback imediato, acumular pontos e avançar por fases. Também planejamos diferentes níveis de dificuldade, personalização de avatar e medalhas por conquistas. |
+| **Prova** | Para organizar o desenvolvimento, utilizamos o Trello para acompanhar nosso backlog e dividir as funcionalidades por prioridade. Também definimos histórias de usuário e critérios de aceite para orientar o desenvolvimento. Durante o primeiro Sprint, conseguimos transformar a ideia inicial em um protótipo funcional de interface e já estruturamos as próximas funcionalidades do aplicativo. |
+| **Chamada** | Nosso objetivo é continuar desenvolvendo o Yoio, começando pelos mini-games e utilizando os feedbacks dos usuários para melhorar a experiência. Queremos que o Yoio seja mais do que um jogo educativo — queremos que ele seja uma ferramenta capaz de tornar o aprendizado mais interativo, estimulante e menos desgastante. Por isso, convidamos vocês a conhecer, testar e dar feedback sobre o nosso projeto. |
+
 ## Kanban e indicadores
 
 | Métrica | Resultado |
