@@ -91,3 +91,7 @@ https://www.figma.com/design/QMKLsjGdrOgbToYKZy0H0i/login?node-id=0-1&p=f&t=a0mi
 ### Principais insights
 
 A validação apresentou uma resposta positiva à proposta do Yoio: **83,3% dos participantes afirmaram que teriam interesse em utilizar a solução**. Os principais pontos de melhoria identificados foram aumentar o poder de atração do aplicativo e oferecer diferentes níveis de dificuldade, permitindo adaptar a experiência às necessidades dos usuários.
+
+
+## Gif da aplicação
+![ Tela inicial e funcionamento](./Design_inicial/MVP_Yoio.gif)
