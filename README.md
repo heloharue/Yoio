@@ -94,4 +94,4 @@ A validação apresentou uma resposta positiva à proposta do Yoio: **83,3% dos 
 
 
 ## Gif da aplicação
-![ Tela inicial e funcionamento](./Design_inicial/MVP_Yoio.gif)
+![ Tela inicial e funcionamento]([./Design_inicial/MVP_Yoio.gif](https://github.com/heloharue/Yoio/blob/main/Design%20inicial/MVP%20Yoio.gif))
