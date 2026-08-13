@@ -54,7 +54,7 @@ https://www.figma.com/design/QMKLsjGdrOgbToYKZy0H0i/login?node-id=0-1&p=f&t=a0mi
 
 <img width="1536" height="822" alt="image" src="https://github.com/user-attachments/assets/2950eddd-71a6-4a33-a70a-758cbb872951" />
 
-## 5. Roteiro do Pitch
+## Roteiro do Pitch
 
 **Contexto → Conflito → Solução → Prova → Chamada**
 
