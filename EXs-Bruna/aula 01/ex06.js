@@ -1,1 +1,1 @@
-const cores2 = ["azul", "verde", "vermelho"];
+const cores2 = [...cores, "vermelho"];
