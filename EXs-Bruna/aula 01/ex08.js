@@ -1,1 +1,4 @@
-const emEstoque = produtos.filter(p => p.estoque > 0).map(p => p.nome)
+const emEstoque = produtos
+  .filter(produto => produto.estoque > 0)
+  .map(produto => produto.nome);
+
