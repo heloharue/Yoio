@@ -29,12 +29,13 @@ const produtos = [
 { nome: "Camiseta", estoque: 0 },
 { nome: "Adesivo", estoque: 7 }
 ];
-
-
-
-const produtos
+    const disponiveis = produtos.filter(p => p.estoque > 0).map(p => p.nome);
 
 9. O que está errado neste código? const total = precos.map((p) => { p * 2 });
+    usa sa {} pois para
+
+
+
 10. Qual a diferença entre import Botao from "./Botao.js" e import { Botao } from "./Botao.js"?
 11. Explique por que lista.push(novo) é um problema dentro de um componente React.
 12. Escreva uma linha que, a partir de produtos, devolva os nomes apenas dos que têm estoque maior que 5.
