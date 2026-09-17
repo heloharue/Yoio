@@ -1,3 +1,54 @@
-const num = [2, 4, 6, 8]
+1. Dado const nums = [1, 2, 3, 4], escreva uma linha que produza [2, 4, 6, 8].
 
-a diferença entre o filter e o map e que o map cria um novo vetor igual ja o filter ele tambem cria um novo verto mas menor do que o original
+const num = [2, 4, 6, 8]
+// ============================================================
+2. Na mesma lista, escreva uma linha que produza só os números pares.
+
+const pares = nums.map(x => 0 === 2);
+
+// ============================================================
+
+3. Explique em uma frase, sem código, a diferença entre map e filter.
+
+A diferença entre o filter e o map é que o map cria um novo vetor igual ja o filter ele tambem cria um novo vertor mas menor do que o original
+// ============================================================
+
+4. Dado const p = { titulo: "Caneca", preco: 25 }, desestruture titulo e preco em uma linha.
+
+const { titulo, preco } = produto ;
+
+// ============================================================
+
+5. Escreva uma função de seta chamada ehCaro que recebe um número e devolve verdadeiro se for maior
+que 100.
+
+const ehcaro = produtos.filter((p) => p.valor >= 100,00);
+
+// ============================================================
+
+6. Dado const cores = ["azul", "verde"], crie cores2 com "vermelho"no fim, sem alterar cores.
+
+const cores2 = [...cores , "vermelho"];
+
+// ============================================================
+
+7. Dado o objeto p da questão 4, crie pEmPromocao com preço 20, sem alterar p.
+
+
+
+// ============================================================
+
+8. Dada a lista de produtos abaixo, escreva uma linha que devolva só os nomes dos produtos em estoque.
+// ============================================================
+
+9. O que está errado neste código? const total = precos.map((p) => { p * 2 });
+// ============================================================
+
+10. Qual a diferença entre import Botao from "./Botao.js" e import { Botao } from "./Botao.js"?
+// ============================================================
+
+11. Explique por que lista.push(novo) é um problema dentro de um componente React.
+// ============================================================
+
+12. Escreva uma linha que, a partir de produtos, devolva os nomes apenas dos que têm estoque maior que 5.
+// ============================================================
