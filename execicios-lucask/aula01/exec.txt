@@ -34,21 +34,35 @@ const cores2 = [...cores , "vermelho"];
 
 7. Dado o objeto p da questão 4, crie pEmPromocao com preço 20, sem alterar p.
 
-
+const pEmPromocao = { ...p, preco: 20 };
 
 // ============================================================
 
 8. Dada a lista de produtos abaixo, escreva uma linha que devolva só os nomes dos produtos em estoque.
+
+produtos.filter(p => p.estoque > 0).map(p => p.nome)
+
 // ============================================================
 
 9. O que está errado neste código? const total = precos.map((p) => { p * 2 });
+
+esta faltando um return
 // ============================================================
 
 10. Qual a diferença entre import Botao from "./Botao.js" e import { Botao } from "./Botao.js"?
+
+import Botao from "./Botao.js" importa o export padrão, enquanto import { Botao } from "./Botao.js" importa um export nomeado.
+
 // ============================================================
 
 11. Explique por que lista.push(novo) é um problema dentro de um componente React.
+
+lista.push(novo) altera a lista original, e no React isso pode impedir que o componente perceba corretamente que o estado mudou.
+
 // ============================================================
 
 12. Escreva uma linha que, a partir de produtos, devolva os nomes apenas dos que têm estoque maior que 5.
+
+produtos.filter(p => p.estoque > 5).map(p => p.nome)
+
 // ============================================================
