@@ -1,0 +1,43 @@
+1. Em uma frase, sem código: o que é uma Promise?
+    É o resultado de uma futura ação, ele pode tanto funcionar quanto falhar
+
+2. Quais os três estados possíveis de uma Promise?
+    pending: em andamento;
+    fulfilled: concluída com sucesso;
+    rejected: concluída com erro.
+
+3. Reescreva usando async/await o código abaixo, que hoje usa .then:
+buscarProduto(3)
+.then((produto) => console.log(produto))
+.catch((erro) => console.log(erro));
+        async function mostrarProduto() {
+        try {
+            const produto = await buscarProduto(3);
+            console.log(produto);
+            } catch (erro) {
+        console.log(erro);
+            }
+        }
+    mostrarProduto();
+
+4. O que exatamente await pausa: o programa inteiro ou só a função onde ele está?
+    As outras funções da pagina continuaram funcionando, ira parar somente a função async
+
+5. Por que colocar await dentro de uma função que não é async dá erro?
+        Por que a AWAIT so funciona em uma função marcada com async
+
+6. Escreva uma função assíncrona chamada buscarProduto que recebe um id, espera 1 segundo e devolve o
+objeto { id, nome: "Produto "+ id } (use Promise e setTimeout, como no exemplo da seção 2).
+    function buscarProduto(id) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        id,
+        nome: "Produto " + id
+      });
+    }, 1000);
+  });
+}
+
+
+    
