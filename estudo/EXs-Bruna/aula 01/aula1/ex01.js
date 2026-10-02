@@ -4,7 +4,6 @@ const dobro = nums.map(n => n * 2);
 
 
 
-
 //CODIGO COMPLETO COM TODOS OS EXERCICIOS 
 //segue abaixo caso queira complrto o codigo para rodar
 //const nums =; 
