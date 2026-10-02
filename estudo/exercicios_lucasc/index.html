@@ -31,8 +31,8 @@
     */
     function ListaDeTarefas() {
         const [tarefas, setTarefas] = useState([
-            { id: 1, texto: "Estudar React", feita: false },
-            { id: 2, texto: "Levar o cachorro", feita: true }
+            {id: 1, texto: "Estudar React", feita: false},
+            {id: 2, texto: "Levar o cachorro", feita: true}
         ]);
         return (
             <div>
@@ -46,3 +46,17 @@
         );
     }
 </script>
+
+<!-- Perguntas da aula 3
+    1. Esquecer o desenhar()
+Comentei a linha e adicionei uma tarefa. O dado entrou no vetor (provei com console.log(tarefas)), mas a tela não mudou. Vetor e tela são separados, e eu preciso sincronizar à mão.
+
+2. Perder o digitado
+O texto sumiu porque o innerHTML = "" apaga os <li> e os <input>. O valor estava no DOM, não no array.
+
+3. Contar quantos lugares
+Mexi em 2 trechos: o HTML e o desenhar(). Em React seria só 1, no JSX.
+
+4. Quebrar a cola
+Com o id renomeado, o HTML não reclamou, mas o console mostrou TypeError: Cannot set properties of null ao carregar a página, porque getElementById("lista") devolveu null.
+-->
