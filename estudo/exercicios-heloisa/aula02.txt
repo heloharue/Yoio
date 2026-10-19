@@ -1,0 +1,60 @@
+1. Em uma frase, sem código: o que é uma Promise?
+    É um objeto que representa o resultado de uma operação assíncrona que pode ser concluída no futuro.
+
+2. Quais os três estados possíveis de uma Promise?
+    pending: pendente.
+    fulfilled: concluída com sucesso.
+    rejected: concluída com erro.
+
+3. Reescreva usando async/await o código abaixo, que hoje usa
+.then:buscarProduto(3)
+.then((produto) => console.log(produto))
+.catch((erro) => console.log(erro));
+
+    async function executar() {
+        try {
+            const produto = await buscarProduto(3);
+            console.log(produto);
+        } catch (erro) {
+            console.log(erro);
+        }
+    }
+
+
+4. O que exatamente await pausa: o programa inteiro ou só a função onde ele está?
+    Pausa a execução da função assíncrona onde está, sem bloquear o programa inteiro.
+
+5. Por que colocar await dentro de uma função que não é async dá erro?
+    Porque await normalmente só pode ser usado dentro de uma função declarada com async ou em módulos JavaScript no nível superior.
+
+6. Escreva uma função assíncrona chamada buscarProduto que recebe um id, espera 1 segundo e devolve o objeto { id, nome: "Produto "+ id } (use Promise e setTimeout, como no exemplo da seção 2).
+    function buscarProduto(id) {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve({ id, nome: "Produto " + id });
+            }, 1000);
+        });
+    }
+
+7. O que está errado neste código?
+function carregarDados() {
+    const dados = await fetch("https://exemplo.com/api");
+    console.log(dados);
+}
+
+    A função carregarDados() não foi declarada como async, mas utiliza await.
+
+8. Complete o trecho abaixo para imprimir o corpo da resposta já convertido em objeto:
+
+async function carregar() {
+    const resposta = await fetch("https://exemplo.com/api");
+    const dados = await resposta.json();
+    console.log(dados);
+}
+
+9. Qual a diferença entre a requisição falhar (sem internet, servidor fora do ar) e o servidor responder com erro (por exemplo, status 404)? Por que fetch sozinho não lança um erro no segundo caso?
+    Falha na requisição: a internet caiu ou o servidor não respondeu.
+    Erro 404: o servidor respondeu, mas não encontrou a página. O fetch não considera isso uma falha automática.
+
+10. Por que rodar produtos.map(async (p) => await buscarDetalhe(p.id)) não espera todos os detalhes chegarem antes de continuar o código?
+    Porque o map retorna promessas, sem esperar que todas sejam concluídas.
