@@ -1,0 +1,42 @@
+1. Dado const nums = [1, 2, 3, 4], escreva uma linha que produza [2, 4, 6, 8].
+    nums.map(n => n * 2)
+
+2. Na mesma lista, escreva uma linha que produza só os números pares.
+    nums.filter(n => n % 2 === 0)
+
+3. Explique em uma frase, sem código, a diferença entre map e filter.
+    map transforma cada elemento da lista, enquanto filter seleciona apenas os elementos que atendem a uma condição.
+
+4. Dado const p = { titulo: "Caneca", preco: 25 }, desestruture titulo e preco em uma linha.
+    const { titulo, preco } = p;
+
+5. Escreva uma função de seta chamada ehCaro que recebe um número e devolve verdadeiro se for maior que 100.
+    const ehCaro = n => n > 100;
+
+6. Dado const cores = ["azul", "verde"], crie cores2 com "vermelho"no fim, sem alterar cores.
+    const cores2 = [...cores, "vermelho"];
+
+7. Dado o objeto p da questão 4, crie pEmPromocao com preço 20, sem alterar p.
+    const pEmPromocao = { ...p, preco: 20 };
+
+8. Dada a lista de produtos abaixo, escreva uma linha que devolva só os nomes dos produtos em estoque.
+const produtos = [
+{ nome: "Caneca", estoque: 3 },
+{ nome: "Camiseta", estoque: 0 },
+{ nome: "Adesivo", estoque: 7 }
+];
+
+    produtos.filter(p => p.estoque > 0).map(p => p.nome)
+
+9. O que está errado neste código? const total = precos.map((p) => { p * 2 });
+    const total = precos.map(p => p * 2);
+
+10. Qual a diferença entre import Botao from "./Botao.js" e import { Botao } from "./Botao.js"?
+    import Botao from "./Botao.js" importa uma exportação padrão (default).
+    import { Botao } from "./Botao.js" importa uma exportação nomeada (named).
+
+11. Explique por que lista.push(novo) é um problema dentro de um componente React.
+    Porque modifica a lista original diretamente, o que pode impedir o React de identificar corretamente as mudanças e atualizar a tela.
+
+12. Escreva uma linha que, a partir de produtos, devolva os nomes apenas dos que têm estoque maior que 5.
+    produtos.filter(p => p.estoque > 5).map(p => p.nome)
