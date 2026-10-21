@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Meu primeiro React</title>
+
+    <script src="https://unpkg.com" crossorigin></script>
+    <script src="https://unpkg.com" crossorigin></script>
+    <script src="https://unpkg.com"></script>
+
 </head>
 <body>
     <div id="root"></div>
-
-<script src="https://unpkg.com"></script>
-<script src="https://unpkg.com"></script>
-<script src="https://unpkg.com"></script>
-
 
     <script type="text/babel">
         function Cabecalho() {
             return (
                 <header style={{ fontFamily: 'sans-serif', paddingBottom: '10px' }}>
                     <h1>Yoio</h1>
-                    <p><em>Um jogo de aprendizagem, que auxilia crianças atipicas com as dificuldades de assimilação de conteúdo escolar. Uso de mini-games educativos que estimulam o desenvolvimento cognitivo das mesmas.</em></p>
+                    <p><em>Um jogo de aprendizagem, que auxilia crianças atípicas com as dificuldades de assimilação de conteúdo escolar. Uso de mini-games educativos que estimulam o desenvolvimento cognitivo das mesmas.</em></p>
                 </header>
             );
         }
@@ -51,15 +51,14 @@
                 <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
                     <Cabecalho />
                     <Cartao />
-                    <Cartao />
-                    <Cartao />
                     <Lista />
                 </div>
             );
         }
 
-        const raiz = ReactDOM.createRoot(document.getElementById("root"));
-        raiz.render(<App/>);
+        // Renderiza o componente App dentro da div #root
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
     </script>
 </body>
 </html>
