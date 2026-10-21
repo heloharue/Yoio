@@ -34,7 +34,6 @@
             );
         }
 
-        // 6.4: Componente Lista refazendo a lista da aula 03 com vetor e map()
         function Lista() {
             const tarefas = [
                 { id: 1, texto: "Estudar React" },
@@ -51,28 +50,20 @@
             );
         }
 
-        // Componente Principal unificando e organizando a tela conforme o roteiro
         function App() {
             return (
                 <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
-                    {/* Renderiza o Cabeçalho do projeto */}
                     <Cabecalho />
-                    <hr />
-
-                    {/* 6.2: Usa o componente Cartao exatamente três vezes */}
                     <Cartao />
                     <Cartao />
                     <Cartao />
-
-                    {/* Renderiza a lista mapeada */}
                     <Lista />
                 </div>
             );
         }
 
-        // Injeta e renderiza o componente App na div root do navegador
         const raiz = ReactDOM.createRoot(document.getElementById("root"));
-        raiz.render(<App />);
+        raiz.render(<App/>);
     </script>
 </body>
 
