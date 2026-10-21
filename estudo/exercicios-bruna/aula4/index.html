@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Meu primeiro React</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com"></script>
+    <script src="https://unpkg.com"></script>
+    <script src="https://unpkg.com"></script>
+
+    <script type="text/babel">
+
+        function Cabecalho() {
+            return (
+                <header style={{ fontFamily: 'sans-serif', paddingBottom: '10px' }}>
+                    <h1>Yoio</h1>
+                    <p><em>Um jogo de aprendizagem, que auxilia crianças atipicas com as dificuldades de assimilação de conteúdo escolar. Uso de mini-games educativos que estimulam o desenvolvimento cognitivo das mesmas.</em></p>
+                </header>
+            );
+        }
+
+
+        function Cartao() {
+            return (
+                <div style={{ border: "1px solid #ccc", padding: "10px", margin: "10px 0", borderRadius: "5px", fontFamily: 'sans-serif' }}>
+                    <h3>Título do item</h3>
+                    <p>Descrição curta do item.</p>
+                </div>
+            );
+        }
+
+        // 6.4: Componente Lista refazendo a lista da aula 03 com vetor e map()
+        function Lista() {
+            const tarefas = [
+                { id: 1, texto: "Estudar React" },
+                { id: 2, texto: "Levar o cachorro" }
+            ];
+
+            return (
+                <div style={{ fontFamily: 'sans-serif', marginTop: '20px' }}>
+                    <h2>Minhas Tarefas:</h2>
+                    <ul>
+                        {tarefas.map((t) => <li key={t.id}>{t.texto}</li>)}
+                    </ul>
+                </div>
+            );
+        }
+
+        // Componente Principal unificando e organizando a tela conforme o roteiro
+        function App() {
+            return (
+                <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
+                    {/* Renderiza o Cabeçalho do projeto */}
+                    <Cabecalho />
+                    <hr />
+
+                    {/* 6.2: Usa o componente Cartao exatamente três vezes */}
+                    <Cartao />
+                    <Cartao />
+                    <Cartao />
+
+                    {/* Renderiza a lista mapeada */}
+                    <Lista />
+                </div>
+            );
+        }
+
+        // Injeta e renderiza o componente App na div root do navegador
+        const raiz = ReactDOM.createRoot(document.getElementById("root"));
+        raiz.render(<App />);
+    </script>
+</body>
+
+</html>
