@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <title>Meu primeiro React</title>
 </head>
-
 <body>
     <div id="root"></div>
 
@@ -14,7 +12,6 @@
     <script src="https://unpkg.com"></script>
 
     <script type="text/babel">
-
         function Cabecalho() {
             return (
                 <header style={{ fontFamily: 'sans-serif', paddingBottom: '10px' }}>
@@ -23,7 +20,6 @@
                 </header>
             );
         }
-
 
         function Cartao() {
             return (
@@ -39,7 +35,6 @@
                 { id: 1, texto: "Estudar React" },
                 { id: 2, texto: "Levar o cachorro" }
             ];
-
             return (
                 <div style={{ fontFamily: 'sans-serif', marginTop: '20px' }}>
                     <h2>Minhas Tarefas:</h2>
@@ -66,5 +61,4 @@
         raiz.render(<App/>);
     </script>
 </body>
-
 </html>
