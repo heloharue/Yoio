@@ -1,64 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>Meu primeiro React</title>
-
-    <script src="https://unpkg.com" crossorigin></script>
-    <script src="https://unpkg.com" crossorigin></script>
-    <script src="https://unpkg.com"></script>
-
 </head>
+
 <body>
     <div id="root"></div>
 
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <script type="text/babel">
+
         function Cabecalho() {
             return (
-                <header style={{ fontFamily: 'sans-serif', paddingBottom: '10px' }}>
+                <header>
                     <h1>Yoio</h1>
-                    <p><em>Um jogo de aprendizagem, que auxilia crianças atípicas com as dificuldades de assimilação de conteúdo escolar. Uso de mini-games educativos que estimulam o desenvolvimento cognitivo das mesmas.</em></p>
+                    <p>Um jogo de aprendizagem, que auxilia crianças atipicas com as dificuldades de assimilação de conteúdo escolar. Uso de mini-games educativos que estimulam o desenvolvimento cognitivo das mesmas.</p>
                 </header>
             );
         }
 
         function Cartao() {
             return (
-                <div style={{ border: "1px solid #ccc", padding: "10px", margin: "10px 0", borderRadius: "5px", fontFamily: 'sans-serif' }}>
-                    <h3>Título do item</h3>
-                    <p>Descrição curta do item.</p>
+                <div>
+                    <h3>Contador de pontuação visível</h3>
+                    <p>Acumulador de pontos a cada acerto para ver o desempenho do usuario e fazê-lo se sentir recompensado.</p>
+
+                    <h3>Botão de pausa em todas as telas</h3>
+                    <p> Pausar o jogo a qualquer momento para o usuario descansar sem perder o progresso.</p>
+
+                     <h3>Álbum de medalhas no menu</h3>
+                    <p>Ganhar medalhas por sequências de acertos para ter metas extras.</p>
                 </div>
             );
         }
 
         function Lista() {
             const tarefas = [
-                { id: 1, texto: "Estudar React" },
-                { id: 2, texto: "Levar o cachorro" }
+                { id: 1, texto: " Área restrita com senha." },
+                { id: 2, texto: "Gráfico de desempenho por jogo." }
             ];
+
             return (
-                <div style={{ fontFamily: 'sans-serif', marginTop: '20px' }}>
-                    <h2>Minhas Tarefas:</h2>
-                    <ul>
-                        {tarefas.map((t) => <li key={t.id}>{t.texto}</li>)}
-                    </ul>
-                </div>
+                <ul>
+                    {tarefas.map((t) => (
+                        <li key={t.id}>{t.texto}</li>
+                    ))}
+                </ul>
             );
         }
 
         function App() {
             return (
-                <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
+                <div>
                     <Cabecalho />
                     <Cartao />
+
+                    <h2>Lista de tarefas</h2>
                     <Lista />
                 </div>
             );
         }
 
-        // Renderiza o componente App dentro da div #root
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
+        const raiz = ReactDOM.createRoot(
+            document.getElementById("root")
+        );
+
+        raiz.render(<App />);
+
     </script>
 </body>
+
 </html>
