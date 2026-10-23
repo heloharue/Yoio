@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Yoio</title>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+function Cabecalho() {
+    return (
+        <header>
+            <h1>Yoio</h1>
+            <p>Um jogo de aprendizagem para crianças atípicas.</p>
+            <p>Minijogos educativos que estimulam o desenvolvimento cognitivo.</p>
+        </header>
+    );
+}
+
+function Lista() {
+    const tarefas = [
+        { id: 1, texto: "Aprender novas palavras" },
+        { id: 2, texto: "Resolver desafios educativos" },
+        { id: 3, texto: "Estimular a memória" },
+        { id: 4, texto: "Praticar conteúdos escolares" }
+    ];
+
+    return (
+        <section>
+            <h2>Atividades do Yoio</h2>
+            <ul>
+                {tarefas.map((t) => (
+                    <li key={t.id}>{t.texto}</li>
+                ))}
+            </ul>
+        </section>
+    );
+}
+
+function App() {
+    return (
+        <div>
+            <Cabecalho />
+            <Lista />
+        </div>
+    );
+}
+
+const raiz = ReactDOM.createRoot(document.getElementById("root"));
+raiz.render(<App />);
+</script>
+</body>
+</html>
+
+
+<!--1. Quantas linhas de código tem a sua lista em React, contra quantas tinha a versão em JavaScript puro da aula 03?
+    A versão em JavaScript puro tem mais código para criar os elementos da lista. Em React, o `map` facilita a criação dos itens e evita repetir código.
+
+2. O que você teria que fazer, em cada uma das duas versões, para mostrar dez tarefas em vez de duas?
+    No React, adicionar mais objetos ao vetor `tarefas`. No JavaScript puro, também adicionar as tarefas ao vetor, pois a função `desenhar()` cria os elementos automaticamente.-->
