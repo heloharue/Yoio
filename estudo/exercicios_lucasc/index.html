@@ -1,0 +1,62 @@
+<!-- no HTML -->
+<p id="contador"></p>
+<ul id="lista"></ul>
+<input id="novo" placeholder="nova tarefa">
+<button id="add">Adicionar</button>
+
+
+<script>
+    /*let tarefas = [
+    { id: 1, texto: "Estudar React", feita: false },
+    { id: 2, texto: "Levar o cachorro", feita: true }
+    ];
+    function desenhar() {
+    const ul = document.getElementById("lista");
+    ul.innerHTML = "";
+    for (const t of tarefas) {
+    const li = document.createElement("li");
+    li.textContent = t.texto + (t.feita ? " (feita)" : "");
+    ul.appendChild(li);
+    }
+    document.getElementById("contador").textContent = tarefas.length + " tarefas";
+    }
+    document.getElementById("add").addEventListener("click", () => {
+    const input = document.getElementById("novo");
+    tarefas.push({ id: Date.now(), texto: input.value, feita: false });
+    input.value = "";
+    desenhar();
+    });
+    desenhar();
+    console.log("Tarefas:", tarefas);
+    */
+    function ListaDeTarefas() {
+        const [tarefas, setTarefas] = useState([
+            {id: 1, texto: "Estudar React", feita: false},
+            {id: 2, texto: "Levar o cachorro", feita: true}
+        ]);
+        return (
+            <div>
+                <p>{tarefas.length} tarefas</p>
+                <ul>
+                    {tarefas.map((t) => (
+                        <li key={t.id}>{t.texto} {t.feita ? "(feita)" : ""}</li>
+                    ))}
+                </ul>
+            </div>
+        );
+    }
+</script>
+
+<!-- Perguntas da aula 3
+    1. Esquecer o desenhar()
+Comentei a linha e adicionei uma tarefa. O dado entrou no vetor (provei com console.log(tarefas)), mas a tela não mudou. Vetor e tela são separados, e eu preciso sincronizar à mão.
+
+2. Perder o digitado
+O texto sumiu porque o innerHTML = "" apaga os <li> e os <input>. O valor estava no DOM, não no array.
+
+3. Contar quantos lugares
+Mexi em 2 trechos: o HTML e o desenhar(). Em React seria só 1, no JSX.
+
+4. Quebrar a cola
+Com o id renomeado, o HTML não reclamou, mas o console mostrou TypeError: Cannot set properties of null ao carregar a página, porque getElementById("lista") devolveu null.
+-->

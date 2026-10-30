@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yoio - Jogo de Aprendizagem</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #d33dbf;
+      margin: 0;
+      padding: 24px;
+    }
+
+    header {
+      background-color: #ff89d8;
+      color: rgb(255, 252, 252);
+      padding: 24px;
+      border-radius: 16px;
+    }
+
+    .destaque {
+      background-color: #ffd0f3;
+      color: #bb3091;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 14px;
+    }
+
+    li {
+      margin: 14px 0;
+    }
+
+    .feita {
+      color: #509268;
+      font-weight: bold;
+    }
+
+    .pendente {
+      color: #ee5656;
+      font-weight: bold;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    const projeto = "Yoio";
+
+    const tarefas = [
+      {
+        id: 1,
+        texto: "Criar a primeira interface do Yoio",
+        feita: true
+      },
+      {
+        id: 2,
+        texto: "Desenvolver os mini-games educativos",
+        feita: false
+      },
+      {
+        id: 3,
+        texto: "Implementar os níveis de dificuldade",
+        feita: false
+      }
+    ];
+
+    function Cabecalho() {
+      return (
+        <header>
+          <h1>{projeto}</h1>
+          <p>Aprender brincando!</p>
+          <p>Jogo educativo com mini-games para crianças atípicas.</p>
+        </header>
+      );
+    }
+
+    function Cartao() {
+      return (
+        <div className="destaque">
+          <h2>Sobre o Yoio</h2>
+          <p>
+            O Yoio é um jogo de aprendizagem que utiliza
+            mini-games educativos para estimular habilidades
+            cognitivas e auxiliar crianças com dificuldades
+            de assimilação de conteúdos escolares.
+          </p>
+          <p>
+            Nosso objetivo é tornar o aprendizado mais
+            interativo, acessível e estimulante.
+          </p>
+        </div>
+      );
+    }
+
+    function Lista() {
+      return (
+        <section>
+          <h2>Tarefas do projeto</h2>
+
+          <ul>
+            {tarefas.map((t) => (
+              <li key={t.id}>
+                {t.texto}{" "}
+                <span className={t.feita ? "feita" : "pendente"}>
+                  {t.feita ? "(feita)" : "(pendente)"}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      );
+    }
+
+    function App() {
+      return (
+        <>
+          <Cabecalho />
+          <main>
+            <Cartao />
+            <Lista />
+          </main>
+        </>
+      );
+    }
+
+    ReactDOM.createRoot(
+      document.getElementById("root")
+    ).render(<App />);
+  </script>
+</body>
+</html>
