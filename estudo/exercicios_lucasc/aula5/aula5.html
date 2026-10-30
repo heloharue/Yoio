@@ -1,59 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-PT">
 <head>
-<meta charset="UTF-8">
-<title>Yoio - Criar conta</title>
-<style>
-  body {
-    background: #1b1a55;
-    font-family: sans-serif;
-  }
-  .cartao {
-    background: #b9a4f0;
-    width: 280px;
-    margin: 40px auto;
-    padding: 20px;
-    border-radius: 20px;
-  }
-  h2 {
-    text-align: center;
-    color: white;
-  }
-  label {
-    display: block;
-    margin: 16px 0;
-    color: #4b2a9b;
-    font-weight: bold;
-  }
-  .google {
-    width: 100%;
-    padding: 8px;
-  }
-  .botoes {
-    text-align: center;
-    margin-top: 20px;
-  }
-  .botoes button {
-    padding: 10px 20px;
-    background: gold;
-  }
-</style>
+    <meta charset="UTF-8">
+    <title>Componente Botão</title>
+    <!-- React e Babel via CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #fff; }
+        
+        /* Estilos do Botão */
+        .botao { 
+            padding: 8px 16px; 
+            border-radius: 6px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            font-size: 14px;
+        }
+        .botao.branco { 
+            background: white; 
+            color: #333; 
+            border: 1px solid #ccc; 
+        }
+        .botao.vermelho { 
+            background: #dc2626; 
+            color: white; 
+            border: none; 
+        }
+    </style>
 </head>
 <body>
 
-<div class="cartao">
-  <h2>CRIAR CONTA</h2>
+    <div id="root"></div>
 
-  <label>NOME: <input type="text"></label>
-  <label>SENHA: <input type="password"></label>
+    <script type="text/babel">
+        // MEU COMPONENTE - cancelar e excluir LUCAS CANTELLI
+        function Botao(props) {
+            return (
+                <button className={`botao ${props.tipo}`}>
+                    {props.texto}
+                </button>
+            );
+        }
 
-  <button class="google">ENTRAR COM GOOGLE</button>
-</div>
+        function App() {
+            return (
+                <div style={{display: 'flex', gap: '10px'}}>
+                    <Botao texto="Cancelar" tipo="branco" />
+                    <Botao texto="Excluir" tipo="vermelho" />
+                </div>
+            );
+        }
 
-<div class="botoes">
-  <button>ENTRAR</button>
-  <button>COMEÇAR</button>
-</div>
-
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
 </body>
 </html>
