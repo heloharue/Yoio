@@ -1,9 +1,30 @@
-Aula 04. Nota: 0,10 de 0,10.
+# Feedback individual — Bruna Valera Marques
 
-Seu index.html carrega React, ReactDOM e Babel, tem o script type="text/babel" e os componentes Cabecalho, Cartao e Lista com props e map com key. A página abre e funciona com o tema do Yoio. Vi você testando e tirando dúvida durante a aula, e isso aparece no resultado.
+Bruna, sua nota registrada neste levantamento é **2,50 pontos**.
 
-Aula 05. Nota: 0,10 de 0,10.
+| Atividade | Nota | Situação |
+|---|---:|---|
+| Aula 01 | 0,10 | Entrega registrada com nota integral. |
+| Aula 02 | 0,10 | Entrega registrada com nota integral. |
+| Aula 03 | 0,10 | Entrega registrada com nota integral. |
+| Aula 04 | 0,10 | Entrega registrada com nota integral. |
+| Aula 05 — JSX | 0,10 | Entrega registrada com nota integral. |
+| Checkpoint 1 — Figma e componentes | 2,00 | Entrega completa localizada. |
+| Desconto por recurso além do conteúdo | 0,00 | Nenhum desconto aplicado. |
+| **Total** | **2,50** |  |
 
-Você usou chaves para o nome do projeto, ternário para feita e pendente, className no destaque e Fragment no lugar da div extra. O JSX está correto e dá para ver que você entendeu a diferença entre expressão e comando.
+## Entregas localizadas
 
-**Nota das Aulas 04 e 05: 0,20 de 0,20.**
+Foi localizada uma entrega do primeiro checkpoint, que consistia em escolher uma tela do Figma, dividir a interface em componentes e implementar a parte solicitada em React. A entrega foi considerada realizada conforme a proposta da atividade e recebeu a nota integral de **2,00 pontos**.
+**Evidência:** `heloharue/Yoio:estudo/exercicios-bruna/aula5/index.html`
+Os recursos utilizados estão de acordo com o conteúdo trabalhado: JSX, componentes, `props`, `map`, `key`, ternário, `className`, Fragment e HTML/CSS. Não foi aplicado desconto.
+
+## Situação das aulas
+
+- **Aula 01:** entrega registrada com nota integral de 0,10.
+- **Aula 02:** entrega registrada com nota integral de 0,10.
+- **Aula 03:** entrega registrada com nota integral de 0,10.
+- **Aula 04:** entrega registrada com nota integral de 0,10.
+- **Aula 05 — JSX:** entrega registrada com nota integral de 0,10.
+
+A nota foi atribuída com base nos arquivos e registros encontrados nos repositórios mapeados. Nenhum desconto foi aplicado por uso de recurso além do conteúdo das aulas.
