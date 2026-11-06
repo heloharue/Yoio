@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir treino</title>
+
+    <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone@7.25.6/babel.min.js"></script>
+
+    <style>
+        body {
+            font-family: Inter, Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f3ff;
+            color: #1f2033;
+        }
+        .tela {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 40px 16px;
+        }
+        h1 { margin: 0 0 4px 0; font-size: 28px; }
+        .subtitulo { margin: 0 0 20px 0; color: #8a8ba0; font-size: 15px; }
+
+        /* cartao do treino */
+        .cartao {
+            background: #ffffff;
+            border: 1px solid #e6e5f2;
+            border-radius: 12px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .cartao h2 { margin: 0; font-size: 17px; }
+        .cartao p  { margin: 2px 0 0 0; color: #6b6c80; font-size: 14px; }
+        .acoes { display: flex; gap: 14px; }
+        .link {
+            background: none;
+            border: none;
+            padding: 0;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .link-editar  { color: #7c3aed; }
+        .link-excluir { color: #dc2626; }
+
+        .pergunta { font-size: 16px; line-height: 1.4; margin: 0 0 16px 0; }
+
+        /* caixa de erro */
+        .erro {
+            background: #fdecec;
+            border: 1px solid #f08a8a;
+            color: #b42318;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        /* botoes de baixo */
+        .botoes { display: flex; gap: 10px; }
+        .btn {
+            font-size: 15px;
+            font-weight: 600;
+            padding: 11px 18px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .btn-confirmar { background: #dc2626; border: 1px solid #dc2626; color: #ffffff; }
+        .btn-voltar    { background: #ffffff; border: 1px solid #d9d8e8; color: #1f2033; }
+        .btn:hover, .link:hover { opacity: 0.85; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function TelaExcluirTreino() {
+            const treino = { nome: "Corrida leve", duracao: 35 };
+
+            // mesma mensagem que aparece no print da tela
+            const [erro, setErro] = useState("Treino não encontrado.");
+
+            const editar = () => alert("Clicou em Editar");
+            const excluirDoCartao = () => alert("Clicou em Excluir (do cartão)");
+            const confirmar = () => setErro("Treino não encontrado."); // aqui entraria a chamada DELETE da API
+            const voltar = () => { setErro(""); alert("Voltando para a lista"); };
+
+            return (
+                <main className="tela">
+                    <h1>Excluir treino</h1>
+                    <p className="subtitulo">Ação sem volta</p>
+
+                    {/* Cartão do treino "Corrida leve" - feito por: lllllllllllllllll */}
+                    <div className="cartao">
+                        <div>
+                            <h2>{treino.nome}</h2>
+                            <p>{treino.duracao} min</p>
+                        </div>
+                        <div className="acoes">
+                            {/* BOTÃO "Editar": link roxo, canto direito do cartão, antes do Excluir */}
+                            {/* Feito por: ______________________ (colocar nome aqui) */}
+                            <button type="button" className="link link-editar" onClick={editar}>
+                                Editar
+                            </button>
+
+                            {/* BOTÃO "Excluir": link vermelho, canto direito do cartão, ao lado do Editar */}
+                            {/* Feito por: ______________________ (colocar nome aqui) */}
+                            <button type="button" className="link link-excluir" onClick={excluirDoCartao}>
+                                Excluir
+                            </button>
+                        </div>
+                    </div>
+
+                    <p className="pergunta">
+                        Tem certeza que deseja excluir "{treino.nome}"? Depois de excluir, o treino não aparece mais na lista.
+                    </p>
+
+                    {/* Caixa de erro (só aparece quando existe mensagem) */}
+                    {erro !== "" && <div className="erro" role="alert">{erro}</div>}
+
+                    <div className="botoes">
+                        {/* BOTÃO "Sim, excluir": vermelho cheio, embaixo, à esquerda */}
+                        {/* Feito por: LUCAS CANTELLI */}
+                        <button type="button" className="btn btn-confirmar" onClick={confirmar}>
+                            Sim, excluir
+                        </button>
+
+                        {/* BOTÃO "Voltar": branco com borda, embaixo, à direita do "Sim, excluir" */}
+                        {/* Feito por: LUCAS CANTELLI */}
+                        <button type="button" className="btn btn-voltar" onClick={voltar}>
+                            Voltar
+                        </button>
+                    </div>
+                </main>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<TelaExcluirTreino />);
+    </script>
+</body>
+</html>

@@ -1,26 +1,81 @@
-// o que você escreve (JSX)
-const titulo = <h1 className="destaque">Olá, React</h1>;
-// o que o Babel entrega para o navegador
-const titulo = React.createElement("h1", { className: "destaque" }, "Olá, React");
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão de Atividade</title>
 
+    <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone@7.25.6/babel.min.js"></script>
 
-function Perfil() {
-const nome = "Ana";
-const turma = "2C";
-return (
-<div>
-<h2>{nome}</h2>
-<p>Turma {turma}, {2026 - 2009} anos</p>
-<p>{nome.toUpperCase()}</p>
-</div>
-);
-}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .cartao {
+            background-color: #ffffff;
+            padding: 20px 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 400px;
+        }
+        .info h2 { margin: 0 0 4px 0; color: #222; font-size: 20px; }
+        .info p  { margin: 0; color: #666; font-size: 16px; }
+        .acoes { display: flex; gap: 16px; }
+        .acoes button {
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0;
+        }
+        .btn-editar  { color: #2563eb; }
+        .btn-excluir { color: #dc2626; }
+        .acoes button:hover { opacity: 0.8; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
 
+    <script type="text/babel">
+        function CardAtividade(props) {
+            return (
+                <div className="cartao">
+                    <div className="info">
+                        <h2>{props.titulo}</h2>
+                        <p>{props.tempo}</p>
+                    </div>
+                    <div className="acoes">
+                        <button type="button" className="btn-editar" onClick={props.onEditar}>Editar</button>
+                        <button type="button" className="btn-excluir" onClick={props.onExcluir}>Excluir</button>
+                    </div>
+                </div>
+            );
+        }
 
-return (
-<div>
-<h1>Título</h1>
-<p>Texto</p>
-</div>
-);
+        function App() {
+            const handleEditar = () => alert("Clicou em Editar!");
+            const handleExcluir = () => alert("Clicou em Excluir!");
 
+            return (
+                <CardAtividade
+                    titulo="Corrida leve"
+                    tempo="30 min"
+                    onEditar={handleEditar}
+                    onExcluir={handleExcluir}
+                />
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
+</html>
