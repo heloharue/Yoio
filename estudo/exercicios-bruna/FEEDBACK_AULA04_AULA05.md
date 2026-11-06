@@ -1,6 +1,6 @@
 # Feedback individual — Bruna Valera Marques
 
-Bruna, sua nota registrada neste levantamento é **2,50 pontos**.
+Bruna, sua nota registrada neste levantamento é **0,50 pontos**.
 
 | Atividade | Nota | Situação |
 |---|---:|---|
@@ -9,15 +9,15 @@ Bruna, sua nota registrada neste levantamento é **2,50 pontos**.
 | Aula 03 | 0,10 | Entrega registrada com nota integral. |
 | Aula 04 | 0,10 | Entrega registrada com nota integral. |
 | Aula 05 — JSX | 0,10 | Entrega registrada com nota integral. |
-| Checkpoint 1 — Figma e componentes | 2,00 | Entrega completa localizada. |
-| Desconto por recurso além do conteúdo | 0,00 | Nenhum desconto aplicado. |
-| **Total** | **2,50** |  |
+| Checkpoint 1 — tela do grupo em componentes | 0,00 | Atividade não realizada. |
+| Desconto | 0,00 | Nenhum desconto aplicado. |
+| **Total** | **0,50** |  |
 
-## Entregas localizadas
+## Situação da atividade de Figma/componentes
 
-Foi localizada uma entrega do primeiro checkpoint, que consistia em escolher uma tela do Figma, dividir a interface em componentes e implementar a parte solicitada em React. A entrega foi considerada realizada conforme a proposta da atividade e recebeu a nota integral de **2,00 pontos**.
-**Evidência:** `heloharue/Yoio:estudo/exercicios-bruna/aula5/index.html`
-Os recursos utilizados estão de acordo com o conteúdo trabalhado: JSX, componentes, `props`, `map`, `key`, ternário, `className`, Fragment e HTML/CSS. Não foi aplicado desconto.
+A atividade específica da Aula 05 — escolher uma tela do Figma, dividir em componentes, construir individualmente o componente com `props` e depois montar a tela do grupo — não foi realizada. Por isso, não há nota de Checkpoint 1 e os **2,00 pontos** não foram atribuídos.
+
+Os arquivos encontrados correspondem às atividades normais da Aula 05 sobre JSX. Eles não comprovam a realização da atividade adicional da tela do grupo em componentes.
 
 ## Situação das aulas
 
@@ -27,4 +27,4 @@ Os recursos utilizados estão de acordo com o conteúdo trabalhado: JSX, compone
 - **Aula 04:** entrega registrada com nota integral de 0,10.
 - **Aula 05 — JSX:** entrega registrada com nota integral de 0,10.
 
-A nota foi atribuída com base nos arquivos e registros encontrados nos repositórios mapeados. Nenhum desconto foi aplicado por uso de recurso além do conteúdo das aulas.
+Não houve desconto por uso de recurso além do conteúdo das aulas. A nota foi atribuída com base nas entregas das aulas e na ausência de realização da atividade específica do Checkpoint 1.
