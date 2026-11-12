@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 05 - JSX de verdade</title>
+    <style>
+        .destaque {
+            background-color: #fff3cd;
+            border-left: 4px solid #f59e0b;
+            padding: 8px 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        // 1. Dado entra na tela: o valor fica numa variável e aparece com chaves
+        const projeto = "Yoio";
+
+        function Cabecalho() {
+            return (
+                <header>
+                    <h1>{projeto}</h1>
+                    <p>Um jogo de aprendizagem para crianças atípicas</p>
+                </header>
+            );
+        }
+
+        // 3. Estilo no lugar certo: className="destaque" (e não class)
+        function Cartao() {
+            return (
+                <div className="destaque">
+                    <h3>Título do item</h3>
+                    <p>Descrição curta do item.</p>
+                </div>
+            );
+        }
+
+        // 2. Ternário de verdade: (feita) ou (pendente) ao lado do texto
+        function Lista() {
+            const tarefas = [
+                { id: 1, texto: "Estudar React", feita: true },
+                { id: 2, texto: "Levar o cachorro", feita: false }
+            ];
+
+            return (
+                <ul>
+                    {tarefas.map((t) => (
+                        <li key={t.id}>
+                            {t.texto} {t.feita ? "(feita)" : "(pendente)"}
+                        </li>
+                    ))}
+                </ul>
+            );
+        }
+
+        // 5. Dois jeitos de resolver "dois elementos soltos": div e Fragment
+        function ComDiv() {
+            return (
+                <div>
+                    <h4>Título (com div)</h4>
+                    <p>Texto</p>
+                </div>
+            );
+        }
+
+        function ComFragment() {
+            return (
+                <>
+                    <h4>Título (com Fragment)</h4>
+                    <p>Texto</p>
+                </>
+            );
+        }
+
+        function App() {
+            return (
+                <div>
+                    <Cabecalho />
+                    <Cartao />
+                    <Lista />
+                    <ComDiv />
+                    <ComFragment />
+                    {/* comentário dentro do JSX vai entre chaves */}
+                </div>
+            );
+        }
+
+        const raiz = ReactDOM.createRoot(document.getElementById("root"));
+        raiz.render(<App />);
+    </script>
+</body>
+</html>

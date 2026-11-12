@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 03 - Versão 1 (JavaScript puro)</title>
+</head>
+<body>
+    <h1>Lista de tarefas</h1>
+
+    <!-- no HTML -->
+    <p id="contador"></p>
+    <ul id="lista"></ul>
+    <input id="novo" placeholder="nova tarefa">
+    <button id="add">Adicionar</button>
+
+    <script>
+        // VERSÃO 1: JavaScript puro (imperativo)
+        let tarefas = [
+            { id: 1, texto: "Estudar React", feita: false },
+            { id: 2, texto: "Levar o cachorro", feita: true }
+        ];
+
+        function desenhar() {
+            const ul = document.getElementById("lista");
+            ul.innerHTML = "";
+            for (const t of tarefas) {
+                const li = document.createElement("li");
+                li.textContent = t.texto + (t.feita ? " (feita)" : "");
+                ul.appendChild(li);
+            }
+            document.getElementById("contador").textContent = tarefas.length + " tarefas";
+        }
+
+        document.getElementById("add").addEventListener("click", () => {
+            const input = document.getElementById("novo");
+            tarefas.push({ id: Date.now(), texto: input.value, feita: false });
+            input.value = "";
+            desenhar();
+        });
+
+        desenhar();
+        console.log("Tarefas:", tarefas);
+    </script>
+
+    <!--
+    LABORATÓRIO: quebrar de propósito
+
+    1. Esquecer o desenhar()
+    Comentei a linha e adicionei uma tarefa. O dado entrou no vetor (provei com console.log(tarefas)),
+    mas a tela não mudou. Vetor e tela são separados, e eu preciso sincronizar à mão.
+
+    2. Perder o digitado
+    O texto sumiu porque o innerHTML = "" apaga os <li> e os <input>. O valor estava no DOM, não no array.
+
+    3. Contar quantos lugares
+    Mexi em 2 trechos: o HTML e o desenhar(). Em React seria só 1, no JSX.
+
+    4. Quebrar a cola
+    Com o id renomeado, o HTML não reclamou, mas o console mostrou
+    TypeError: Cannot set properties of null ao carregar a página, porque getElementById("lista") devolveu null.
+
+    REGISTRO (3 linhas)
+    O experimento que mais me incomodou foi o 2, o de perder o que foi digitado: nada deu erro e mesmo assim o usuário perdeu o texto dele.
+    Isso acontece porque o innerHTML = "" apaga tudo e monta de novo, e o valor do input estava só no DOM e não no vetor.
+    No React o dado fica numa variável só e a tela é refeita a partir dela, então a tela não consegue discordar do dado.
+    -->
+</body>
+</html>

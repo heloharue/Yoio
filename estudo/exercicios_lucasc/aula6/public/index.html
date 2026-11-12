@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 06 - Componentes e props</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        // Dados no formato exato que a API devolve: { id, nome, duracao }
+        // (trocar pelos treinos que existem no seu banco)
+        const treinos = [
+            { id: 1, nome: "Peito e triceps", duracao: 90 },
+            { id: 2, nome: "Costas e biceps", duracao: 60 },
+            { id: 3, nome: "Pernas", duracao: 75 }
+        ];
+
+        // Treino recebe props: nome e duracao (desestruturação, aula 01)
+        function Treino({ nome, duracao }) {
+            return (
+                <li>
+                    <strong>{nome}</strong> ({duracao} min)
+                </li>
+            );
+        }
+
+        // Composição: a lista recebe o vetor e usa map com key para gerar um Treino por item
+        function ListaDeTreinos({ treinos }) {
+            return (
+                <ul>
+                    {treinos.map((t) => (
+                        <Treino key={t.id} nome={t.nome} duracao={t.duracao} />
+                    ))}
+                </ul>
+            );
+        }
+
+        function App() {
+            return (
+                <div>
+                    <h1>Diário de Treinos</h1>
+
+                    <h2>Treino usado 3 vezes, dados escritos à mão</h2>
+                    <ul>
+                        <Treino nome="Peito e triceps" duracao={90} />
+                        <Treino nome="Costas e biceps" duracao={60} />
+                        <Treino nome="Pernas" duracao={75} />
+                    </ul>
+
+                    <h2>Lista gerada com map a partir do vetor</h2>
+                    <ListaDeTreinos treinos={treinos} />
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+</body>
+</html>

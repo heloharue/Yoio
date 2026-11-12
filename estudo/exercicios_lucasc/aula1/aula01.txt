@@ -4,7 +4,7 @@
 2.	Na mesma lista, escreva uma linha que produza só os números pares.
 		const pares = nums.filter(numero => numero % 2 === 0);
 
-3.	Na mesma lista, escreva uma linha que produza só os números pares.
+3.	Explique em uma frase, sem código, a diferença entre map e filter.
 		MAP: pega um item, aplica uma função e retorna a mesma lista, sem excluir anterior.
 		FILTER: pega uma lista, impõe uma condição e retorna uma lista apenas com os itens que passaram nesse filtro.
 

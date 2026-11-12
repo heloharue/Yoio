@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06 - Tela "Excluir treino" quebrada em componentes</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f3ff; color: #1f2033; }
+        .tela { max-width: 400px; margin: 0 auto; padding: 40px 16px; }
+        .subtitulo { color: #8a8ba0; }
+        .cartao { background: #fff; border: 1px solid #e6e5f2; border-radius: 12px; padding: 14px 16px;
+                  display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .acoes { display: flex; gap: 14px; }
+        .link { background: none; border: none; font-weight: 600; cursor: pointer; padding: 0; }
+        .link-editar { color: #7c3aed; }
+        .link-excluir { color: #dc2626; }
+        .erro { background: #fdecec; border: 1px solid #f08a8a; color: #b42318; border-radius: 8px;
+                padding: 10px 14px; margin-bottom: 16px; }
+        .botoes { display: flex; gap: 10px; }
+        .btn { font-weight: 600; padding: 11px 18px; border-radius: 10px; cursor: pointer; }
+        .btn-confirmar { background: #dc2626; border: 1px solid #dc2626; color: #fff; }
+        .btn-voltar { background: #fff; border: 1px solid #d9d8e8; color: #1f2033; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        // Dados fixos, no formato da API
+        const treino = { id: 1, nome: "Corrida leve", duracao: 35 };
+        const erro = "Treino não encontrado.";
+
+        // Componente 1: recebe props e é usado 4 vezes (Editar, Excluir, Sim excluir, Voltar)
+        function Botao({ texto, classe }) {
+            return (
+                <button type="button" className={classe}>
+                    {texto}
+                </button>
+            );
+        }
+
+        // Componente 2: cartão do treino (usa o Botao 2 vezes)
+        function CartaoTreino({ nome, duracao }) {
+            return (
+                <div className="cartao">
+                    <div>
+                        <h2>{nome}</h2>
+                        <p>{duracao} min</p>
+                    </div>
+                    <div className="acoes">
+                        <Botao texto="Editar" classe="link link-editar" />
+                        <Botao texto="Excluir" classe="link link-excluir" />
+                    </div>
+                </div>
+            );
+        }
+
+        // Componente 3: caixa de erro, só aparece quando há mensagem
+        function CaixaErro({ mensagem }) {
+            return mensagem !== "" ? <div className="erro" role="alert">{mensagem}</div> : null;
+        }
+
+        function TelaExcluirTreino() {
+            return (
+                <main className="tela">
+                    <h1>Excluir treino</h1>
+                    <p className="subtitulo">Ação sem volta</p>
+
+                    <CartaoTreino nome={treino.nome} duracao={treino.duracao} />
+
+                    <p>Tem certeza que deseja excluir "{treino.nome}"? Depois de excluir, o treino não aparece mais na lista.</p>
+
+                    <CaixaErro mensagem={erro} />
+
+                    <div className="botoes">
+                        <Botao texto="Sim, excluir" classe="btn btn-confirmar" />
+                        <Botao texto="Voltar" classe="btn btn-voltar" />
+                    </div>
+                </main>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<TelaExcluirTreino />);
+    </script>
+</body>
+</html>

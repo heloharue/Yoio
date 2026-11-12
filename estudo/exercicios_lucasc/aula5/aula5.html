@@ -1,59 +1,68 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Componente Botão</title>
-    <!-- React e Babel via CDN -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Aula 05 - Meu componente: Botao</title>
     <style>
         body { font-family: sans-serif; padding: 20px; background: #fff; }
-        
-        /* Estilos do Botão */
-        .botao { 
-            padding: 8px 16px; 
-            border-radius: 6px; 
-            font-weight: bold; 
-            cursor: pointer; 
-            font-size: 14px;
-        }
-        .botao.branco { 
-            background: white; 
-            color: #333; 
-            border: 1px solid #ccc; 
-        }
-        .botao.vermelho { 
-            background: #dc2626; 
-            color: white; 
-            border: none; 
-        }
+
+        .botoes { display: flex; gap: 10px; }
+        .botao { padding: 11px 18px; border-radius: 10px; font-weight: 600; font-size: 15px; cursor: pointer; }
+        .botao.confirmar { background: #dc2626; color: #fff; border: 1px solid #dc2626; }
+        .botao.voltar { background: #fff; color: #1f2033; border: 1px solid #d9d8e8; }
     </style>
 </head>
 <body>
-
+    <!-- Outros pedaços da tela ficam como div simples, só para o meu componente aparecer no lugar certo -->
     <div id="root"></div>
 
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <script type="text/babel">
-        // MEU COMPONENTE - cancelar e excluir LUCAS CANTELLI
+        // Dados fixos, no formato do treino da API (sem API por enquanto)
+        const treino = { id: 1, nome: "Corrida leve", duracao: 35 };
+
+        // Os botões de baixo da tela "Excluir treino". Dados fixos num array:
+        const botoes = [
+            { id: 1, texto: "Sim, excluir", tipo: "confirmar" },
+            { id: 2, texto: "Voltar", tipo: "voltar" }
+        ];
+
+        // MEU COMPONENTE - Botao (Sim, excluir / Voltar) LUCAS CANTELLI
         function Botao(props) {
             return (
-                <button className={`botao ${props.tipo}`}>
+                <button type="button" className={"botao " + props.tipo}>
                     {props.texto}
                 </button>
             );
         }
 
-        function App() {
+        // MEU COMPONENTE - BotoesDeBaixo: lista de botões com map e key
+        function BotoesDeBaixo(props) {
             return (
-                <div style={{display: 'flex', gap: '10px'}}>
-                    <Botao texto="Cancelar" tipo="branco" />
-                    <Botao texto="Excluir" tipo="vermelho" />
+                <div className="botoes">
+                    {props.botoes.map((b) => (
+                        <Botao key={b.id} texto={b.texto} tipo={b.tipo} />
+                    ))}
                 </div>
             );
         }
 
-        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+        function App() {
+            return (
+                <div>
+                    {/* Pedaço dos outros integrantes (div simples) */}
+                    <div>Excluir treino</div>
+                    <div>Cartão: {treino.nome} ({treino.duracao} min)</div>
+                    {/* Só mostra os botões quando há botões: ternário */}
+                    {botoes.length > 0 ? <BotoesDeBaixo botoes={botoes} /> : <p>Sem ações</p>}
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<App />);
     </script>
 </body>
 </html>

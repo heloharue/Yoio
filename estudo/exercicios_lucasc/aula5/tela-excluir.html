@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 05 - Tela "Excluir treino" em um único componente</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f3ff; color: #1f2033; }
+        .tela { max-width: 400px; margin: 0 auto; padding: 40px 16px; }
+        .subtitulo { color: #8a8ba0; }
+        .cartao { background: #fff; border: 1px solid #e6e5f2; border-radius: 12px; padding: 14px 16px;
+                  display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .acoes { display: flex; gap: 14px; }
+        .link { background: none; border: none; font-weight: 600; cursor: pointer; padding: 0; }
+        .link-editar { color: #7c3aed; }
+        .link-excluir { color: #dc2626; }
+        .erro { background: #fdecec; border: 1px solid #f08a8a; color: #b42318; border-radius: 8px;
+                padding: 10px 14px; margin-bottom: 16px; }
+        .botoes { display: flex; gap: 10px; }
+        .btn { font-weight: 600; padding: 11px 18px; border-radius: 10px; cursor: pointer; }
+        .btn-confirmar { background: #dc2626; border: 1px solid #dc2626; color: #fff; }
+        .btn-voltar { background: #fff; border: 1px solid #d9d8e8; color: #1f2033; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        // TAREFA DA AULA 05: a tela inteira em JSX, dentro de UM único componente.
+        // Só a estrutura: sem props, sem repetir nada de propósito.
+        function TelaExcluirTreino() {
+            const treino = { nome: "Corrida leve", duracao: 35 };
+            const erro = "Treino não encontrado.";
+
+            return (
+                <main className="tela">
+                    <h1>Excluir treino</h1>
+                    <p className="subtitulo">Ação sem volta</p>
+
+                    {/* REPETIDO 1: bloco "cartão" (hoje só 1, mas na lista seriam vários) */}
+                    <div className="cartao">
+                        <div>
+                            <h2>{treino.nome}</h2>
+                            <p>{treino.duracao} min</p>
+                        </div>
+                        <div className="acoes">
+                            {/* REPETIDO 2: botão (Editar, Excluir, Sim excluir, Voltar são todos <button>) */}
+                            <button type="button" className="link link-editar">Editar</button>
+                            <button type="button" className="link link-excluir">Excluir</button>
+                        </div>
+                    </div>
+
+                    <p>Tem certeza que deseja excluir "{treino.nome}"? Depois de excluir, o treino não aparece mais na lista.</p>
+
+                    {/* ternário: a caixa de erro só aparece quando existe mensagem */}
+                    {erro !== "" ? <div className="erro" role="alert">{erro}</div> : null}
+
+                    <div className="botoes">
+                        {/* REPETIDO 2: botão de novo */}
+                        <button type="button" className="btn btn-confirmar">Sim, excluir</button>
+                        <button type="button" className="btn btn-voltar">Voltar</button>
+                    </div>
+                </main>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<TelaExcluirTreino />);
+
+        /*
+        CONTAGEM: o componente TelaExcluirTreino tem 35 linhas (30 sem contar as linhas em branco).
+
+        O QUE APARECE REPETIDO (candidatos a componente):
+        - o <button> aparece 4 vezes (Editar, Excluir, Sim excluir, Voltar), mudando só o texto e o estilo;
+        - o bloco do cartão (nome + duração) se repetiria para cada treino da lista;
+        - a caixa de erro só muda a mensagem.
+        */
+    </script>
+</body>
+</html>

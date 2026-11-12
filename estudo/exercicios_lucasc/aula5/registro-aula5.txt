@@ -1,0 +1,22 @@
+AULA 05 - REGISTROS
+
+QUEBRAR DE PROPÓSITO (mensagens típicas do console, confirmar no seu navegador com o F12 aberto)
+1. class no lugar de className: a tela aparece, mas o console avisa "Invalid DOM property `class`. Did you mean `className`?".
+2. Dois elementos soltos no return: "Adjacent JSX elements must be wrapped in an enclosing tag". Resolvido com div (cria um div a mais no HTML)
+   e com Fragment <>...</> (não cria nada no HTML final). Na aba Elementos, o que deixa um div a mais é a versão com div.
+3. <img> sem a barra no fim: erro de sintaxe do Babel apontando a etiqueta (algo como "Expected corresponding JSX closing tag for <img>").
+4. if dentro das chaves: "Unexpected token". if é comando, e dentro das chaves só cabe expressão (usar o ternário).
+
+REGISTRO DO LABORATÓRIO (3 linhas)
+Expressão é qualquer coisa que produz um valor, como {projeto} ou {t.feita ? "(feita)" : "(pendente)"}; comando executa algo sem produzir valor, como o if.
+Hoje usei os dois: a expressão {projeto} no Cabecalho e o ternário na Lista, e o if foi o que não coube nas chaves.
+O erro mais difícil de entender foi o do <img> sem a barra, porque a mensagem do Babel não fala "falta fechar a etiqueta" de forma clara.
+
+REGISTRO DA ATIVIDADE (3 linhas)
+Fiz o componente Botao, usado nos botões "Sim, excluir" e "Voltar" da tela Excluir treino, e o BotoesDeBaixo que monta os dois com map e key.
+O mais difícil foi decidir o que muda de um botão para o outro: só o texto e o estilo, que viraram as props texto e tipo.
+Meu pedaço fica na parte de baixo da tela, depois da pergunta de confirmação e da caixa de erro.
+
+TELA DA AULA 05 (tela-excluir.html)
+Escolhi a tela "Excluir treino" e escrevi tudo em um único componente: 35 linhas (30 sem contar as em branco).
+Apareceu repetido: o <button> 4 vezes (Editar, Excluir, Sim excluir, Voltar), o bloco do cartão (se repetiria na lista) e a caixa de erro.

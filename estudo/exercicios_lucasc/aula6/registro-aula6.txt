@@ -1,0 +1,31 @@
+AULA 06 - COMPONENTES E PROPS
+
+PASSO 0 (front dentro da API do Back-End I)
+Esta parte é feita no repositório do Back-End I (servidor.js), que não está neste repositório Yoio:
+1. git pull, npm install, npm start e conferir http://localhost:3000/treinos.
+2. Criar a pasta public ao lado do servidor.js.
+3. No servidor.js, logo depois de app.use(express.json()), acrescentar: app.use(express.static('public'));
+4. Copiar o index.html para public/ e abrir http://localhost:3000. Para testar, usar aula6/public/index.html desta pasta.
+O arquivo desta aula está em aula6/public/index.html e o da tarefa 5 em aula6/tela-componentes.html.
+
+QUEBRAR DE PROPÓSITO (mensagens típicas, confirmar no seu console com o F12 aberto)
+1. Apagar a key do map: Warning: Each child in a list should have a unique "key" prop. Check the render method of `ListaDeTreinos`.
+2. duracao="90" com aspas: na tela fica igual a duracao={90}, sem erro. Mas "90" é texto e 90 é número: a API só aceita número
+   maior que zero, então mandaria 400.
+3. Errar o nome de uma prop em um dos lados: o valor chega undefined e o campo aparece vazio, por exemplo "( min)". Não dá erro no console.
+4. props.nome = "outro" dentro do Treino: o React deixa as props somente leitura. Em modo estrito dá
+   TypeError: Cannot assign to read only property 'nome'; fora dele a troca é ignorada e a tela continua igual.
+
+REGISTRO (3 linhas)
+O Treino mostra um treino diferente a cada uso, porque recebe nome e duracao por props, enquanto o Cartao da aula 04 saía sempre igual.
+Na tela do meu projeto usei o critério "se repete": o Botao aparece 4 vezes e virou componente, e o cartão do treino também tem nome próprio na conversa.
+duracao="90" é o texto "90" e duracao={90} é o número 90, e a API só aceita número, então com aspas ela responderia 400.
+
+TAREFA 5 (aula6/tela-componentes.html)
+Peguei a tela Excluir treino da aula 05 e quebrei em 3 componentes: Botao (usado 4 vezes, recebe texto e classe), CartaoTreino (recebe nome e duracao)
+e CaixaErro (recebe mensagem). Os dados continuam fixos.
+
+ANTES DA PRÓXIMA AULA (fazer no GitHub e no Back-End I)
+- Commit e push do public/index.html e da linha do servidor.js, com mensagem tipo "aula06 - front dentro da api".
+- Atualizar a lista de componentes no README do grupo (Checkpoint 1).
+- Ter pelo menos 3 treinos cadastrados no banco (usar o testes.http).

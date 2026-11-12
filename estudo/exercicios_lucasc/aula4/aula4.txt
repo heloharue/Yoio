@@ -1,1 +1,26 @@
-nao entendi como faz
+AULA 04 - SEU PRIMEIRO COMPONENTE
+
+Arquivo da aula: aula4/index.html (Cabecalho, Cartao usado 3 vezes e Lista com map e key)
+
+QUEBRAR DE PROPÓSITO (mensagens típicas do console, confirmar no seu navegador com o F12 aberto)
+
+1. Trocar Cartao por cartao:
+   O componente não aparece. O console avisa que <cartao /> está com a capitalização errada e que a tag
+   é desconhecida. O React trata minúsculas como etiqueta HTML, e não como componente.
+
+2. Apagar type="text/babel":
+   Tela em branco e o console mostra "Uncaught SyntaxError: Unexpected token '<'". Sem o type, o navegador
+   tenta executar o JSX como JavaScript comum e não entende o "<".
+
+3. Apagar o parêntese depois de um return:
+   Não aparece erro e o componente some da tela (ou só aparece a primeira linha). O JavaScript fecha o return
+   na primeira linha e devolve vazio.
+
+4. Apagar o key do map:
+   A tela continua igual, mas o console avisa: Warning: Each child in a list should have a unique "key" prop.
+   O React usa a key para saber qual item é qual quando a lista muda.
+
+REGISTRO (3 linhas)
+Minha lista em React ficou com 11 linhas (a função Lista), contra 21 linhas de JavaScript na versão pura da aula 03, sem contar o HTML.
+Para mostrar dez tarefas em vez de duas, nas duas versões eu só acrescento 8 objetos no vetor tarefas: no React quem monta os <li> é o map,
+e no JavaScript puro é o for do desenhar(). A diferença é que no JavaScript puro eu ainda preciso lembrar de chamar desenhar() quando o vetor mudar.

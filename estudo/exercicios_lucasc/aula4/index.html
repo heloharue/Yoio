@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 04 - Meu primeiro React</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        // Cabeçalho com o nome do projeto e a proposta de valor (2º trimestre)
+        function Cabecalho() {
+            return (
+                <header>
+                    <h1>Yoio</h1>
+                    <p>Um jogo de aprendizagem que ajuda crianças atípicas a resolver atividades cognitivas sem o desgaste psicológico do estudo.</p>
+                </header>
+            );
+        }
+
+        // Mesmo componente usado três vezes (ainda sem props)
+        function Cartao() {
+            return (
+                <div>
+                    <h3>Título do item</h3>
+                    <p>Descrição curta do item.</p>
+                </div>
+            );
+        }
+
+        // Lista da aula 03, agora em React: map com key
+        function Lista() {
+            const tarefas = [
+                { id: 1, texto: "Estudar React" },
+                { id: 2, texto: "Levar o cachorro" }
+            ];
+
+            return (
+                <ul>
+                    {tarefas.map((t) => <li key={t.id}>{t.texto}</li>)}
+                </ul>
+            );
+        }
+
+        function App() {
+            return (
+                <div>
+                    <Cabecalho />
+                    <Cartao />
+                    <Cartao />
+                    <Cartao />
+                    <Lista />
+                </div>
+            );
+        }
+
+        const raiz = ReactDOM.createRoot(document.getElementById("root"));
+        raiz.render(<App />);
+    </script>
+</body>
+</html>
