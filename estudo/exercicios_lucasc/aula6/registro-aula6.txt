@@ -29,3 +29,4 @@ ANTES DA PRÓXIMA AULA (fazer no GitHub e no Back-End I)
 - Commit e push do public/index.html e da linha do servidor.js, com mensagem tipo "aula06 - front dentro da api".
 - Atualizar a lista de componentes no README do grupo (Checkpoint 1).
 - Ter pelo menos 3 treinos cadastrados no banco (usar o testes.http).
+so para alterar o nome do commit pq foi um nome estranho
