@@ -1,34 +1,40 @@
+
 1. Dado const nums = [1, 2, 3, 4], escreva uma linha que produza [2, 4, 6, 8].
 
-const num = [2, 4, 6, 8]
+const nums = [1, 2, 3, 4];
+const dobrados = nums.map(n => n * 2);
+
 // ============================================================
+
 2. Na mesma lista, escreva uma linha que produza só os números pares.
 
-const pares = nums.map(x => 0 === 2);
+const pares = nums.filter(n => n % 2 === 0);
 
 // ============================================================
 
 3. Explique em uma frase, sem código, a diferença entre map e filter.
 
-A diferença entre o filter e o map é que o map cria um novo vetor igual ja o filter ele tambem cria um novo vertor mas menor do que o original
+A diferença é que o map transforma os elementos de uma lista, enquanto o filter seleciona apenas os elementos que atendem a uma condição.
+
 // ============================================================
 
 4. Dado const p = { titulo: "Caneca", preco: 25 }, desestruture titulo e preco em uma linha.
 
-const { titulo, preco } = produto ;
+const p = { titulo: "Caneca", preco: 25 };
+const { titulo, preco } = p;
 
 // ============================================================
 
-5. Escreva uma função de seta chamada ehCaro que recebe um número e devolve verdadeiro se for maior
-que 100.
+5. Escreva uma função de seta chamada ehCaro que recebe um número e devolve verdadeiro se for maior que 100.
 
-const ehcaro = produtos.filter((p) => p.valor >= 100,00);
+const ehCaro = n => n > 100;
 
 // ============================================================
 
-6. Dado const cores = ["azul", "verde"], crie cores2 com "vermelho"no fim, sem alterar cores.
+6. Dado const cores = ["azul", "verde"], crie cores2 com "vermelho" no fim, sem alterar cores.
 
-const cores2 = [...cores , "vermelho"];
+const cores = ["azul", "verde"];
+const cores2 = [...cores, "vermelho"];
 
 // ============================================================
 
@@ -40,13 +46,14 @@ const pEmPromocao = { ...p, preco: 20 };
 
 8. Dada a lista de produtos abaixo, escreva uma linha que devolva só os nomes dos produtos em estoque.
 
-produtos.filter(p => p.estoque > 0).map(p => p.nome)
+produtos.filter(p => p.estoque > 0).map(p => p.nome);
 
 // ============================================================
 
 9. O que está errado neste código? const total = precos.map((p) => { p * 2 });
 
-esta faltando um return
+Está faltando um return dentro da função, ou retirar as chaves para o retorno automático.
+
 // ============================================================
 
 10. Qual a diferença entre import Botao from "./Botao.js" e import { Botao } from "./Botao.js"?
@@ -63,6 +70,6 @@ lista.push(novo) altera a lista original, e no React isso pode impedir que o com
 
 12. Escreva uma linha que, a partir de produtos, devolva os nomes apenas dos que têm estoque maior que 5.
 
-produtos.filter(p => p.estoque > 5).map(p => p.nome)
+produtos.filter(p => p.estoque > 5).map(p => p.nome);
 
 // ============================================================

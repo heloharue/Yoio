@@ -1,68 +1,57 @@
-<p id="contador"></p>
-<ul id="lista"></ul>
-<input id="novo" placeholder="nova tarefa">
-<button id="add">Adicionar</button>
 
-<script>
-/*let tarefas = [ 
-  { id: 1, texto: "Estudar React" , feita: false }, 
-  { id: 2, texto: "Levar o cachorro" , feita: true } 
-];
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tarefas</title>
+</head>
+<body>
 
-function desenhar() { 
-  const ul = document.getElementById("lista"); 
-  ul.innerHTML = ""; 
-  for (const t of tarefas) { 
-    const li = document.createElement("li"); 
-    li.textContent = t.texto + (t.feita ? " (feita)" : ""); 
-    ul.appendChild(li); 
-  } 
-  document.getElementById("contador").textContent = tarefas.length + " tarefas"; 
-}
+  <p id="contador"></p>
 
-document.getElementById("add").addEventListener("click" , () => { 
-  const input = document.getElementById("novo"); 
-  tarefas.push({ id: Date.now(), texto: input.value, feita: false }); 
-  input.value = ""; 
-  desenhar(); 
-});
-/*
+  <ul id="lista"></ul>
 
+  <input id="novo" placeholder="Nova tarefa">
 
-desenhar();
+  <button id="add">Adicionar</button>
 
-function ListaDeTarefas() { 
-  const [tarefas, setTarefas] = useState([ 
-    { id: 1, texto: "Estudar React" , feita: false }, 
-    { id: 2, texto: "Levar o cachorro" , feita: true } 
-  ]); 
-  return ( 
-    <div> 
-      <p>{tarefas.length} tarefas</p> 
-      <ul> 
-        {tarefas.map((t) => ( 
-          <li key={t.id}>{t.texto} {t.feita ? " (feita)" : ""}</li> 
-        ))} 
-      </ul> 
-    </div> 
-  ); 
-}
-*/
+  <script>
+    let tarefas = [
+      { id: 1, texto: "Estudar React", feita: false },
+      { id: 2, texto: "Levar o cachorro", feita: true }
+    ];
 
-function ListaDeTarefas() {
-const [tarefas, setTarefas] = useState([
-{ id: 1, texto: "Estudar React", feita: false },
-{ id: 2, texto: "Levar o cachorro", feita: true }
-]);
-return (
-<div>
-<p>{tarefas.length} tarefas</p>
-<ul>
-{tarefas.map((t) => (
-<li key={t.id}>{t.texto} {t.feita ? "(feita)" : ""}</li>
-))}
-</ul>
-</div>
-);
-}
-</script>
+    function desenhar() {
+      const ul = document.getElementById("lista");
+      ul.innerHTML = "";
+
+      for (const t of tarefas) {
+        const li = document.createElement("li");
+        li.textContent = t.texto + (t.feita ? " (feita)" : "");
+        ul.appendChild(li);
+      }
+
+      document.getElementById("contador").textContent =
+        tarefas.length + " tarefas";
+    }
+
+    document.getElementById("add").addEventListener("click", () => {
+      const input = document.getElementById("novo");
+
+      if (input.value.trim() === "") return;
+
+      tarefas.push({
+        id: Date.now(),
+        texto: input.value,
+        feita: false
+      });
+
+      input.value = "";
+      desenhar();
+    });
+
+    desenhar();
+  </script>
+
+</body>
+</html>
