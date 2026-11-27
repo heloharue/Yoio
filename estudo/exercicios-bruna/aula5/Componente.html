@@ -1,44 +1,56 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Treino</title>
-<style>
-.acao { display: flex; gap: 14px; }
-
-.link {
-  background: none;
-  border: none;
-  padding: 0;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.link-excluir {
-  color: #dc2626;
-  background: #fef2f2;
-  border: 1px solid #fecaca;
-  border-radius: 8px;
-  padding: 8px 14px;
-  transition: background 0.2s, border-color 0.2s;
-}
-
-.link-excluir:hover {
-  background: #fee2e2;
-  border-color: #dc2626;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Excluir treino</title>
 </head>
-
 <body>
-  <div class="acao">
-    <button type="button" class="link link-excluir">
-      Excluir
-    </button>
-  </div>
-</body>
 
+  <button
+    onclick="excluirTreino()"
+    style="
+      background: none;
+      border: none;
+      color: red;
+      padding: 0;
+      font-size: 16px;
+      cursor: pointer;
+    "
+  >
+    Excluir
+  </button>
+
+  <script>
+    async function excluirTreino() {
+      // Informe aqui o ID real do treino que deseja excluir.
+      const id = 1;
+
+      try {
+        const resposta = await fetch(
+          `http://localhost:3000/treinos/${id}`,
+          {
+            method: 'DELETE',
+            credentials: 'include'
+          }
+        );
+
+        if (resposta.status === 401) {
+          alert('Faça login novamente.');
+          return;
+        }
+
+        if (!resposta.ok) {
+          alert('Não foi possível excluir o treino.');
+          return;
+        }
+
+        alert('Treino excluído com sucesso!');
+      } catch (erro) {
+        alert('Erro ao conectar com a API.');
+      }
+    }
+  </script>
+
+</body>
 </html>
